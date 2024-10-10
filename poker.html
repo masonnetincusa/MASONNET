@@ -1,0 +1,153 @@
+<html>
+<title>Mason's Poker</title>
+
+<!--  -->
+    <style>
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+    <style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+    <style>
+body {
+  background-image: url('https://cdn11.bigcommerce.com/s-a4izj7sge8/images/stencil/1280x1280/products/2538/18589/ch_holdem_top_72_D1__05243.1686434434.jpg');
+}
+</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}
+</style>
+      <script>
+   function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "Current Pot: $" + localStorage.clickcount + " ";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+    </script>
+        <style>
+    body {
+         font-family: Arial, Helvetica, sans-serif;
+        }
+</style>
+    <font color="yellow">
+    <center><h2><b>Mason's Poker</b></h2></center>
+        </font>
+    <font color="white">
+    <center><img src="IMG_0427.png" width="182" height="45" alt="MASONNET Logo"> Approved <span class="material-symbols-outlined">
+verified
+</span></center>
+    <center>A MASONNET Arcade Exclusive Game, only on masonnet.org.</center>
+   <center><a href="https://www.masonnet.org"><button>MASONNET</button></a></center>
+        <button><span class="material-symbols-outlined">
+manage_accounts
+</span></button>
+    <hr>
+    <img src="phl.png" alt="Placeholder, does not work">
+    
+    <h3><div id="result"></div></h3>
+    <button onclick="clickCounter()" type="button" class="button button3">Raise, Check, or Ante</button>
+    <hr>
+        <div class="tooltip"><img src="pokercard-removebg-preview.png">
+  <span class="tooltiptext">Start the game!</span>
+</div>
+        <p align="right"><font color="green"><b>YOUR CARDS:</b></font></p>
+<div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+
+  <div class="centered">Raise</div>
+</div><div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+
+  <div class="centered">Ante</div>
+</div><div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+
+  <div class="centered">Fold</div>
+</div><div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+
+  <div class="centered">All-in</div>
+</div><div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+<div class="centered">Check</div>
+</div><div class="container">
+  <img src="pokerchip.png" alt="Poker chip" width="128" height="128">
+<div class="centered">New match</div>
+</div>
+    <font size="2">*When a player goes all-in, they commit all chips in front of them into the current pot. The maximum amount a player can go all-in with is the amount of chips they started the hand with. If you start a hand with $200 on the table, then $200 is the most you can put into the pot.</font>
+</font>
+    <hr>
+    <font size="2">Copyright &copy; 2024 MASONNET, Inc. All rights reserved. Developed by Mason Murphy, Founder & CEO, MASONNET, Inc.</font>
+</html>
