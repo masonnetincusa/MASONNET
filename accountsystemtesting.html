@@ -1,4 +1,14 @@
 <html>
+  <style> 
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+</style>
+   <style>body{font-family:Arial,Helvetica,sans-serif}</style>
   <title>Account Testing</title>
   <center><img src="IMG_0427.png"></center>
   <center><b><h1>Account Testing</h1></b></center>
@@ -67,13 +77,13 @@ function test_input($data) {
 <center>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> 
-  Email: <input type="text" name="email">
+  Email: <input type="text" name="email" placeholder="Required" required>
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Password: <input type="password" name="password" minlength="8" required>
+  Password: <input type="password" name="password" minlength="8" placeholder="Required" required>
   <span class="error">* <?php echo $passwordErr;?></span>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" name="submit" value="&rarr;">  
 </form>
 </center>
 <?php
