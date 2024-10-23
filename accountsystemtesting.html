@@ -10,13 +10,13 @@
 <?php
 // define variables and set to empty values
 $passwordErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$password = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["password"])) {
-    $nameErr = "Password is required";
+    $passwordErr = "Password is required";
   } else {
-    $name = test_input($_POST["password"]);
+    $password = test_input($_POST["password"]);
     // check if password only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z-' ]*$/",$password)) {
       $passwordErr = "Only letters and white space allowed";
@@ -64,7 +64,7 @@ function test_input($data) {
 }
 ?>
 
-
+<center>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> 
   Email: <input type="text" name="email">
@@ -75,7 +75,7 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-
+</center>
 <?php
 echo "<h2>Your Input:</h2>";
 echo $email;
