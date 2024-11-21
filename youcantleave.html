@@ -26,7 +26,7 @@ if (window.addEventListener) {
     <script type="text/javascript">
       function closeHandler(e) {
         e.preventDefault(); // Does not actually cancel
-        e.returnValue = ''; // Does prevent dialog (doesn't show anyways)
+        e.returnValue = 'You CANNOT leave!'; // Does prevent dialog (doesn't show anyways)
         alert('Leaving website, opening a new tab...'); // Does not display
         window.open(window.location.href, '_blank'); // Open a new tab?, No...
       }
