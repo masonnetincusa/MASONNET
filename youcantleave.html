@@ -1,8 +1,13 @@
 <html>
   <head>
     <script>
-      window.onbeforeunload = function() {
-   return 'You CANNOT leave!';
+   var message = "You CANNOT leave!";
+window.onbeforeunload = function(event) {
+    var e = event || window.event;
+    if (e) {
+        e.returnValue = message;
+    }
+    return message;
 };
     </script>
      <style>body{font-family:Arial,Helvetica,sans-serif}</style>
