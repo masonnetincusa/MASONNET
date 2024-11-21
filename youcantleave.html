@@ -1,45 +1,27 @@
 <html>
   <head>
-    <script>
-   var message = "You CANNOT leave!";
-window.onbeforeunload = function(event) {
-    var e = event || window.event;
-    if (e) {
-        e.returnValue = message;
-    }
-    return message;
-};
-      function internalHandler(e) {
-    e.preventDefault(); // required in some browsers
-    e.returnValue = ""; // required in some browsers
-    return "You CANNOT leave!"; // only works in old browsers
-}
-
-if (window.addEventListener) {
-    window.addEventListener('beforeunload', internalHandler, true);
-} else if (window.attachEvent) {
-    window.attachEvent('onbeforeunload', internalHandler);
-}
+      <title>You can't leave!</title> 
+    <style>body{font-family:Arial,Helvetica,sans-serif}</style>
+   <script language="jscript">
+        function goFullscreen() {
+            // Must be called as a result of user interaction to work
+            mf = document.getElementById("main_frame");
+            mf.webkitRequestFullscreen();
+            mf.style.display="";
+        }
+        function fullscreenChanged() {
+            if (document.webkitFullscreenElement == null) {
+                mf = document.getElementById("main_frame");
+                mf.style.display="none";
+            }
+        }
+        document.onwebkitfullscreenchange = fullscreenChanged;
+        document.documentElement.onclick = goFullscreen;
+        document.onkeydown = goFullscreen;
     </script>
-     <style>body{font-family:Arial,Helvetica,sans-serif}</style>
-    <title>You can't leave!</title> 
-    <script type="text/javascript">
-      function closeHandler(e) {
-        e.preventDefault(); // Does not actually cancel
-        e.returnValue = 'You CANNOT leave!'; // Does prevent dialog (doesn't show anyways)
-        alert('Leaving website, opening a new tab...'); // Does not display
-        window.open(window.location.href, '_blank'); // Open a new tab?, No...
-      }
-
-      if (window.addEventListener) {
-        window.addEventListener('beforeunload', closeHandler, true);
-      } else if (window.attachEvent) {
-        window.attachEvent('onbeforeunload', closeHandler);
-      }
-    </script>
-  </head>
-  <body>
-    <center><h1>You can't leave!!!!</h1></center>
-    <center>Go to <a href="https://www.masonnet.org">masonnet.org</a>!</center>
-  </body>
+<body style="margin:0">
+    <center><h1>You can't leave!</h1></center>
+  <hr>
+    <iframe id="main_frame" src="https://www.masonnet.org" style="width:100%;height:100%;border:none;display:none"></iframe>
+</body>
 </html>
