@@ -1,0 +1,22 @@
+<html>
+  <head>
+     <style>body{font-family:Arial,Helvetica,sans-serif}</style>
+    <title>You can't leave!</title> type="text/javascript">
+      function closeHandler(e) {
+        e.preventDefault(); // Does not actually cancel
+        e.returnValue = ''; // Does prevent dialog (doesn't show anyways)
+        alert('Leaving website, opening a new tab...'); // Does not display
+        window.open(window.location.href, '_blank'); // Open a new tab?, No...
+      }
+
+      if (window.addEventListener) {
+        window.addEventListener('beforeunload', closeHandler, true);
+      } else if (window.attachEvent) {
+        window.attachEvent('onbeforeunload', closeHandler);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Persistent Page...</h1>
+  </body>
+</html>
