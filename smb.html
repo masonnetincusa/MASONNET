@@ -1,142 +1,60 @@
-<html lang="en-us" data-google-analytics-opt-out=""><head>
-    
-    
-    
-    
-    
-    
-    
-<style>
-@keyframes ggt-annotate-pulse {
-  from {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.91);
-  }
-  17% {
-    transform: scale(0.98);
-  }
-  33% {
-    transform: scale(0.87);
-  }
-  45% {
-    transform: scale(1);
-  }
-};
-</style><style type="text/css">.PlayMarioJas { 
-  color: white;
-}
-@font-face { 
-  font-family: 'Press Start';
-  src: url('https://playmario.github.io/HTML5_Client/Fonts/pressstart2p-webfont.eot'), url('https://playmario.github.io/HTML5_Client/Fonts/pressstart2p-webfont.eot?#iefix') format('embedded-opentype'), url('https://playmario.github.io/HTML5_Client/Fonts/pressstart2p-webfont.woff') format('woff'), url('https://playmario.github.io/HTML5_Client/Fonts/pressstart2p-webfont.ttf') format('truetype'), url('https://playmario.github.io/HTML5_Client/Fonts/pressstart2p-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-</style></head>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Super Mario Bros JS</title>
+
+  <link href="https://tylerreichle.github.io/mario_js/assets/css/reset.css" rel="stylesheet" />
+  <link href="https://tylerreichle.github.io/mario_js/assets/css/stylesheet.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-101227805-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
 <body>
-	
-	
-	<section id="game"><div class="EightBitter PlayMarioJas" style="position: relative; width: 582px; height: 464px; font-family: &quot;Press Start&quot;;"><canvas width="582" height="464"></canvas><div class="touch-passer-container" style="position: absolute; inset: 0px; display: none;"><div class="control" style="position: absolute; width: 0px; height: 0px; box-sizing: border-box; opacity: 0.84; left: 0px; bottom: 0px;"><div class="control-inner" style="position: absolute; box-sizing: border-box; text-align: center; width: 3.5cm; height: 3.5cm; margin-left: 0px; margin-top: -3.5cm; border-radius: 100%;"><div class="control-inner control-joystick-circle" style="position: absolute; background: rgb(175, 175, 175); border-radius: 100%; inset: 21%; box-shadow: rgb(238, 238, 238) 0px 0px 1px 4px; cursor: pointer;"><div class="control-joystick-tick" style="position: absolute; left: 100%; top: 50%; margin-left: -10px; margin-top: -1px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(0deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 85.3553%; top: 85.3553%; margin-left: -8.53553px; margin-top: -2.41421px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(45deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 50%; top: 100%; margin-left: -5px; margin-top: -3px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(90deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 14.6447%; top: 85.3553%; margin-left: -1.46447px; margin-top: -2.41421px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(135deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 0%; top: 50%; margin-left: 0px; margin-top: -1px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(180deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 14.6447%; top: 14.6447%; margin-left: -1.46447px; margin-top: 0.414214px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(225deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 50%; top: 0%; margin-left: -5px; margin-top: 1px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(270deg);"></div><div class="control-joystick-tick" style="position: absolute; left: 85.3553%; top: 14.6447%; margin-left: -8.53553px; margin-top: 0.414214px; width: 0.28cm; height: 4px; background: rgb(238, 238, 238); transform: rotate(315deg);"></div><div class="control-joystick-drag-line" style="position: absolute; opacity: 0; top: 0.77cm; left: 0.77cm; width: 0.49cm; height: 4px; background: rgb(210, 210, 210); transition: opacity 117ms;"></div><div class="control-joystick-drag-shadow" style="position: absolute; opacity: 1; inset: 14%; margin-left: 0px; margin-top: 0px; border-radius: 100%; background: rgba(231, 231, 231, 0.84); box-shadow: rgba(175, 175, 175, 0.7) 0px 0px 7px 3px; transition: 117ms;"></div></div></div></div><div class="control" style="position: absolute; width: 0px; height: 0px; box-sizing: border-box; opacity: 0.84; right: 0px; bottom: 0px;"><div class="control-inner" style="position: absolute; box-sizing: border-box; text-align: center; padding: 0.385cm; width: 1.4cm; height: 1.4cm; border: 4px solid rgb(238, 238, 238); border-radius: 100%; background: rgb(175, 175, 175); cursor: pointer; margin-left: -1.56cm; margin-top: -2.8cm;">A</div></div><div class="control" style="position: absolute; width: 0px; height: 0px; box-sizing: border-box; opacity: 0.84; right: 0px; bottom: 0px;"><div class="control-inner" style="position: absolute; box-sizing: border-box; text-align: center; padding: 0.385cm; width: 1.4cm; height: 1.4cm; border: 4px solid rgb(238, 238, 238); border-radius: 100%; background: rgb(175, 175, 175); cursor: pointer; margin-left: -2.8cm; margin-top: -1.56cm;">B</div></div><div class="control" style="position: absolute; width: 0px; height: 0px; box-sizing: border-box; opacity: 0.84; left: 50%; bottom: 0px;"><div class="control-inner" style="position: absolute; box-sizing: border-box; text-align: center; padding: 0.21cm; width: 7em; height: auto; border: 4px solid rgb(238, 238, 238); border-radius: 7px; background: rgb(175, 175, 175); cursor: pointer; font-size: 77%; margin-top: -1.12cm; left: -3em;">Start</div></div></div><table id="dataDisplay" style="position: absolute; top: 0px; width: 582px; color: white; font-size: 21px; text-transform: uppercase; visibility: visible;"><tr style="padding: 7px 14px 0px; text-align: center;"><td class="PlayMarioJas_value score"><div>score</div><div>0</div></td><td class="PlayMarioJas_value time"><div>time</div><div>376</div></td><td class="PlayMarioJas_value world"><div>world</div><div>1-1</div></td><td class="PlayMarioJas_value coins"><div>coins</div><div>0</div></td><td class="PlayMarioJas_value lives"><div>lives</div><div>3</div></td></tr></table></div></section>
-	
-	
-	
-	
-	
-	
+  <div class="main">
+    <div class="description">
+      <div>
+        <h1>Mario</h1>
+        <h2>JS</h2>
+      </div>
 
-	
-	<br>
+      <div class="controls">
+        <h2>Controls</h2>
+        <h3>Move Left: &#8678; / A</h3>
+        <h3>Move Right: &#8680; / D</h3>
+        <h3>Jump: &#8679; / W / Spacebar</h3>
+      </div>
 
+      <div id="mute-button"></div>
+      <div class="fourth-one"> </div>
+    </div>
 
-    <!--  =======================  GAME CORE FILES  ========================  -->
-    <script src="https://playmario.github.io/HTML5_Client/References/AreaSpawnr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/AudioPlayr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ChangeLinr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/DeviceLayr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/EightBittr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/FPSAnalyzr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/GamesRunnr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/GameStartr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/GroupHoldr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/InputWritr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ItemsHoldr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/LevelEditr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/MapsCreatr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/MapScreenr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/MathDecidr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ModAttachr-0.2.2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/NumberMakr-0.2.2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ObjectMakr-0.2.2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/PixelDrawr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/PixelRendr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/QuadsKeepr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ScenePlayr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/StringFilr-0.2.1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/ThingHittr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/TimeHandlr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/TouchPassr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/UsageHelpr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/UserWrappr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/WorldSeedr-0.2.0.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/References/js_beautify.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/PlayMarioJas.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/audio.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/collisions.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/devices.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/editor.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/generator.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/groups.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/events.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/help.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/input.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/items.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/1-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/1-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/1-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/1-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/2-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/2-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/2-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/2-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/3-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/3-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/3-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/3-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/4-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/4-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/4-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/4-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/5-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/5-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/5-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/5-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/6-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/6-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/6-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/6-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/7-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/7-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/7-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/7-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/8-1.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/8-2.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/8-3.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/8-4.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/maps/Random.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/math.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/mods.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/objects.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/quadrants.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/renderer.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/runner.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/scenes.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/sprites.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/touch.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/settings/ui.js" type="text/javascript"></script>
-    <script src="https://playmario.github.io/HTML5_Client/index.js" type="text/javascript"></script>
-    
+    <canvas id="game-canvas" width="760" height="600"></canvas>
+    <audio id="background_music" autoplay loop>
+      <source src="https://tylerreichle.github.io/mario_js/assets/audio/music/mario_theme.mp3" type="audio/mp3" />
+    </audio>
 
 
-</body></html>
+  </div>
+</body>
+
+<script src="https://tylerreichle.github.io/mario_js/assets/javascripts/jquery.min.js"></script>
+<script src="https://tylerreichle.github.io/mario_js/assets/javascripts/bundle.js"></script>
+
+</html>
+
+<!-- Mute icons made by Madebyoliver. http://www.flaticon.com/authors/madebyoliver -->
